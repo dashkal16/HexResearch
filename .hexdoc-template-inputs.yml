@@ -1,0 +1,19 @@
+author: Dashkal
+book_id: "hexresearch:hexresearchbook"
+default_branch: main
+github_repo: hexresearch
+gradle_mod_version_key: modVersion
+hexdoc_mod_plugin_classname: HexResearchModPlugin
+hexdoc_plugin_classname: HexResearchPlugin
+java_lang:
+  ext: java
+  src: java
+java_package: name/dashkal/minecraft/hexresearch
+mod_display_name: Hex Research
+modid: hexresearch
+multiloader: true
+pages_url: https://dashkal.github.io/hexresearch
+pattern_regex:
+  regex: '(?P<is_per_world>register|registerPerWorld)\(HexPattern\.fromAngles\("(?P<signature>[qweasd]+)",\s*HexDir\.(?P<startdir>\w+)\),\s*"(?P<name>[^"]+)"?'
+  per_world_value: registerPerWorld
+pattern_registry: registry/HexResearchPatternRegistry.java
