@@ -16,4 +16,4 @@ pages_url: https://dashkal.github.io/hexresearch
 pattern_regex:
   regex: '(?P<is_per_world>register|registerPerWorld)\(HexPattern\.fromAngles\("(?P<signature>[qweasd]+)",\s*HexDir\.(?P<startdir>\w+)\),\s*"(?P<name>[^"]+)"?'
   per_world_value: registerPerWorld
-pattern_registry: registry/HexResearchPatternRegistry.java
+pattern_registry: registry/HRHexPatterns.java
