@@ -4,9 +4,19 @@ import semver from 'https://cdn.jsdelivr.net/npm/semver@7.5.4/+esm';
 const BOOK_URL = "https://dashkal16.github.io/HexResearch";
 const VERSION = "latest/main";
 const MINECRAFT_VERSION = "1.19.2";
-const FULL_VERSION = "0.0.4.1.0.dev0";
+const FULL_VERSION = "0.1.0.1.0.dev0";
 const LANG = "en_us";
 const SHOW_DROPDOWN_MINECRAFT_VERSION = "true" === "true";
+const DROPDOWN_MINECRAFT_TEMPLATE = "Minecraft {version}";
+// https://stackoverflow.com/a/61634647
+function replaceTemplate(template, replacements) {
+  return template.replace(
+    /{(\w+)}/g,
+    (placeholderWithDelimiters, placeholderWithoutDelimiters) =>
+    replacements.hasOwnProperty(placeholderWithoutDelimiters) ?
+      replacements[placeholderWithoutDelimiters] : placeholderWithDelimiters
+  );
+}
 let cycleNodes = [];
 function hookLoad(elem) {
   elem.addEventListener("toggle", () => {
@@ -148,7 +158,7 @@ function dropdownItem(text, href) {
 }
 function versionDropdownItem(sitemap, versionKey) {
   const {defaultPath, langPaths, markers, defaultLang} = sitemap[versionKey];
-  const {version, full_version} = markers[LANG] ?? markers[defaultLang];
+  const {version, full_version, minecraft_version} = markers[LANG] ?? markers[defaultLang];
   // link to the current language if available, else link to the default language
   let path;
   if (langPaths.hasOwnProperty(LANG)) {
@@ -157,7 +167,7 @@ function versionDropdownItem(sitemap, versionKey) {
     path = defaultPath;
   }
   const li = dropdownItem(version, BOOK_URL + path);
-  if (full_version === FULL_VERSION) {
+  if (full_version === FULL_VERSION && versionKey == VERSION && minecraft_version == MINECRAFT_VERSION) {
     li.classList.add("disabled");
   }
   return li;
@@ -221,21 +231,30 @@ function addDropdowns(sitemap) {
     for (const minecraftVersion of minecraftVersions) {
       const subSitemap = sitemap[minecraftVersion];
       const [branches, versions] = sortSitemapVersions(Object.keys(subSitemap));
-      // honestly, i shouldn't be allowed to write javascript
       dropdownItems.push(
-        dropdownHeader(minecraftVersion),
+        dropdownHeader(replaceTemplate(
+          DROPDOWN_MINECRAFT_TEMPLATE,
+          {version: minecraftVersion},
+        )),
         ...versionDropdownItems(subSitemap, versions),
-        ...(branches.length ? [dropdownSubmenu(
-          "latest/...",
-          versionDropdownItems(subSitemap, branches).map(item => {
-            item.firstChild.textContent = item.firstChild.textContent.replace(/^latest\//, "");
-            return item;
-          }),
-        )] : []),
-        dropdownSeparator(),
       );
+      // honestly, i shouldn't be allowed to write javascript
+      if (branches.length > 1) {
+        dropdownItems.push(
+          dropdownSubmenu(
+            "latest/...", // TODO: this really shouldn't be hardcoded
+            versionDropdownItems(subSitemap, branches).map(item => {
+              item.firstChild.textContent = item.firstChild.textContent.replace(/^latest\//, "");
+              return item;
+            }),
+          ),
+        );
+      } else if (branches.length == 1) {
+        dropdownItems.push(
+          versionDropdownItem(subSitemap, branches[0]),
+        );
+      }
     }
-    dropdownItems.pop(); // remove trailing separator
     langNames = sitemap[MINECRAFT_VERSION][VERSION].langNames;
     langPaths = sitemap[MINECRAFT_VERSION][VERSION].langPaths;
   } else { // legacy sitemap, not using minecraft versions
