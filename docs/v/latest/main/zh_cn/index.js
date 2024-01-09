@@ -5,7 +5,7 @@ const BOOK_URL = "https://dashkal16.github.io/HexResearch";
 const VERSION = "latest/main";
 const MINECRAFT_VERSION = "1.19.2";
 const FULL_VERSION = "0.1.2.1.0.dev0";
-const LANG = "en_us";
+const LANG = "zh_cn";
 const SHOW_DROPDOWN_MINECRAFT_VERSION = "true" === "true";
 const DROPDOWN_MINECRAFT_TEMPLATE = "Minecraft {version}";
 // https://stackoverflow.com/a/61634647
