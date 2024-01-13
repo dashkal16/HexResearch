@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Hex Research Book</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="description" content="The Hex Research Book, all in one place." />
+      <meta name="author" content="Dashkal" />
+        <link rel="None" type="image/ico" href="favicon.ico" />
+        <link rel="icon" type="image/png" href="favicon-16x16.png" />
+        <link rel="icon" type="image/png" href="favicon-32x32.png" />
+        <link rel="icon" type="image/png" href="favicon-64x64.png" />
+        <link rel="icon" type="image/png" href="favicon-96x96.png" />
+        <link rel="icon" type="image/png" href="favicon-180x180.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-60x60.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-152x152.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-167x167.png" />
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon-180x180.png" />
+        <link rel="None" type="image/png" href="mstile-70x70.png" />
+        <link rel="None" type="image/png" href="mstile-270x270.png" />
+        <link rel="None" type="image/png" href="mstile-310x310.png" />
+        <link rel="None" type="image/png" href="mstile-310x150.png" />
+        <link rel="shortcut icon" type="image/png" href="favicon-196x196.png" />
+      <link rel="mask-icon" href="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/main/media/safari-pinned-tab.svg" color="#332233">
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Hex Research Book" />
+<meta property="og:image" content="https://dashkal16.github.io/HexResearch/v/1.0.0/1.0.dev0/en_us/icon.png" />
+<meta property="og:url" content="https://dashkal16.github.io/HexResearch/v/1.0.0/1.0.dev0/en_us" />
+<meta property="og:description" content="The Hex Research Book, all in one place." />
+<meta property="og:site_name" content="Hex Research (1.0.0)" />
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="index.css">
+      <link rel="stylesheet" href="textures.css">
+      <noscript>
+        <style>
+          /* for accessibility */
+          .spoilered {
+            filter: none !important;
+          }
+        </style>
+      </noscript>
+        <script type="module" src="index.js"></script>
+  <script type="module" src="hexcasting.js"></script>
+  </head>
+  <body>
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <!-- toggle and name -->
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#navbar-collapse"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://dashkal16.github.io/HexResearch">Hex Research Book</a>
+    </div>
+    <!-- content -->
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >1.0.0 <span class="caret"></span></a>
+          <ul class="dropdown-menu" id="version-dropdown"></ul>
+        </li>
+        <li class="dropdown">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >English (United States) <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-left" id="lang-dropdown"></ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container" style="margin-top: 3em;">
+  <blockquote>
+      <h1><p>This is the online version of the Hex Research documentation.</p></h1>
+      <p><strong>Entries which are blurred are spoilers</strong>. Click to reveal them, but be aware that they may spoil endgame progression. Alternatively, click <a href="?nospoiler">here</a> to get a version with all spoilers showing.</p>
+      <span id="old-version-notice" class="hidden">
+        <br />
+        <p><i>The past is a foreign country; they do things differently there.</i></p>
+      </span>
+  </blockquote>
+</div>
+<div class="container">
+<div id="table-of-contents"></div>
+<nav class="toc-container">
+  <h2 class="page-header">
+    Table of <span class="nobr">Contents<a
+      href="javascript:void(0)"
+      class="permalink toggle-link small"
+      data-target="toc-category"
+      title="Toggle all"
+    ><i class="bi bi-list-nested"></i></a><a
+    href="#table-of-contents"
+    class="permalink small toc-permalink"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></span>
+  </h2>
+    <details class="toc-category">
+      <summary><a href="#items" class="toc-elem "><img
+      title="Focus"
+      alt="Focus"
+      src="https://raw.githubusercontent.com/object-Object/HexMod/327ad0bfa8585800a0334d6a0fbd4c96460c414e/Common/src/main/resources/assets/hexcasting/textures/item/focus_empty.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Items</a></summary>
+      <ul>
+          <li><a href="#items/cognitive_inducer" class="toc-elem "><img
+      title="Cognitive Inducer"
+      alt="Cognitive Inducer"
+      src="https://dashkal16.github.io/HexResearch/v/1.0.0/1.0.dev0/assets/hexresearch/textures/block/cognitive_inducer.png"
+      loading="lazy"
+      class="item-texture  texture "
+    > Cognitive Inducer</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#greatwork" class="toc-elem spoilered"><img
+      title="Music Disc"
+      alt="Music Disc"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/music_disc_11.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > The Great Work</a></summary>
+      <ul>
+          <li><a href="#greatwork/enlightened_thought_sieve" class="toc-elem spoilered"><img
+      title="Skeleton Skull"
+      alt="Skeleton Skull"
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA5UlEQVQ4y22TMQ4CMQwE/RYahERDgaBGUNBeS0XLD3j9oY00p8FKEfly9m7W66Rej+t6O+3XxPNhN1a+s56X49gnpob8Z7mPfGKxMdH3vYzFP4NDBjj7gjGJxBQnhgBCK0h0bQEwM6CQkIOEb1oueoYVQIpNYDBtBVeArQC5VsMBNni0gNM2iLY6OapMUhR0kpkypuOxby0Y4D5NiEeoGARInZ3O2LgbzN5TK982TjEROU/DqquDZxNwz/2Kb/egS+wE9gnwnweMDpMs2Yb2livFqOhvYDYJg1NbnGSz+gPqreBVCH6o7cFQ/fKDlAAAAABJRU5ErkJggg=="
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > On Thought Sifting</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#patterns" class="toc-elem "><img
+      title="Bookshelf"
+      alt="Bookshelf"
+      src="https://hexdoc-dev.github.io/hexdoc-minecraft/v/1.19.2/1.0.dev1/assets/minecraft/textures/block/bookshelf.png"
+      loading="lazy"
+      class="item-texture  texture "
+    > Patterns</a></summary>
+      <ul>
+          <li><a href="#patterns/villager_actions" class="toc-elem "><img
+      title="Emerald"
+      alt="Emerald"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/emerald.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Villagers</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#patterns/spells" class="toc-elem "><img
+      title="Enchanted Book"
+      alt="Enchanted Book"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/enchanted_book.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Spells</a></summary>
+      <ul>
+          <li><a href="#patterns/spells/thought_sieve" class="toc-elem "><img
+      title="Hopper"
+      alt="Hopper"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/hopper.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Thought Sieve</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#patterns/great_spells" class="toc-elem "><img
+      title="Conduit Power"
+      alt="Conduit Power"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/mob_effect/conduit_power.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Great Spells</a></summary>
+      <ul>
+          <li><a href="#patterns/great_spells/imbue_mind" class="toc-elem "><img
+      title="Cognitive Inducer"
+      alt="Cognitive Inducer"
+      src="https://dashkal16.github.io/HexResearch/v/1.0.0/1.0.dev0/assets/hexresearch/textures/block/cognitive_inducer.png"
+      loading="lazy"
+      class="item-texture  texture "
+    > Imbue Mind</a></li>
+      </ul>
+    </details>
+</nav>
+  <main class="book-body">
+<section id="items">
+    <h2 class="category-title page-header">
+    <img
+      title="Focus"
+      alt="Focus"
+      src="https://raw.githubusercontent.com/object-Object/HexMod/327ad0bfa8585800a0334d6a0fbd4c96460c414e/Common/src/main/resources/assets/hexcasting/textures/item/focus_empty.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Items<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#items"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p>I devote this section to the magical and mysterious items I might encounter in my studies.</p><p>It seems like many of these items have uses when held alongside my <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/staff"><span style="color: #b0b">staff</span></a>. I suppose I will have to choose what goes in my other hand carefully.</p>
+<div id="items/cognitive_inducer" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="Cognitive Inducer"
+      alt="Cognitive Inducer"
+      src="https://dashkal16.github.io/HexResearch/v/1.0.0/1.0.dev0/assets/hexresearch/textures/block/cognitive_inducer.png"
+      loading="lazy"
+      class="item-texture  texture "
+    >Cognitive Inducer<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#items/cognitive_inducer"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>I have devised a construction capable of precipitating a rudimentary mind by induction from nearby villagers. It&#39;s not capable of true sapience, but I believe it will suffice for purposes such as bookkeeping or media manipulation.</p>
+<br />
+  <details class="details-collapsible recipe-details">
+      <summary class="collapse-details">
+    <span class="collapse-recipe-show">Click to show recipes</span>
+    <span class="collapse-recipe-hide">Click to hide recipes</span>
+  </summary>
+    <div class="crafting-tables">
+<div>
+    <h5>Cognitive Inducer</h5>
+    <div class="crafting-table">
+        <img
+      title="Crafting Table"
+      alt="Crafting Table"
+      src="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/8958a6e92d7b9fe044256fd94dc5a74a4ef1e05e/src/hexdoc/_export/resources/assets/minecraft/textures/gui/hexdoc/crafting_table.png"
+      class="texture pixelated"
+    >
+  <div class="crafting-table-grid">
+        <div class="texture item-texture multi-textures cycle-textures">
+                <img
+      title="Blank Slate"
+      alt="Blank Slate"
+      src="https://raw.githubusercontent.com/object-Object/HexMod/327ad0bfa8585800a0334d6a0fbd4c96460c414e/Common/src/main/resources/assets/hexcasting/textures/item/slate_blank.png"
+      loading="lazy"
+      class="item-texture multi-texture-active texture pixelated"
+    >
+        </div>
+        <div class="texture item-texture multi-textures cycle-textures">
+                <img
+      title="Amethyst Shard"
+      alt="Amethyst Shard"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/amethyst_shard.png"
+      loading="lazy"
+      class="item-texture multi-texture-active texture pixelated"
+    >
+        </div>
+        <div class="texture item-texture multi-textures cycle-textures">
+                <img
+      title="Blank Slate"
+      alt="Blank Slate"
+      src="https://raw.githubusercontent.com/object-Object/HexMod/327ad0bfa8585800a0334d6a0fbd4c96460c414e/Common/src/main/resources/assets/hexcasting/textures/item/slate_blank.png"
+      loading="lazy"
+      class="item-texture multi-texture-active texture pixelated"
+    >
+        </div>
+        <div class="texture item-texture multi-textures cycle-textures">
+                <img
+      title="Amethyst Shard"
+      alt="Amethyst Shard"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/amethyst_shard.png"
+      loading="lazy"
+      class="item-texture multi-texture-active texture pixelated"
+    >
+        </div>
+        <div class="texture item-texture multi-textures cycle-textures">
+                <img
+      title="Diamond"
+      alt="Diamond"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/diamond.png"
+      loading="lazy"
+      class="item-texture multi-texture-active texture pixelated"
+    >
+        </div>
+        <div class="texture item-texture multi-textures cycle-textures">
+                <img
+      title="Amethyst Shard"
+      alt="Amethyst Shard"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/amethyst_shard.png"
+      loading="lazy"
+      class="item-texture multi-texture-active texture pixelated"
+    >
+        </div>
+        <div class="texture item-texture multi-textures cycle-textures">
+                <img
+      title="Blank Slate"
+      alt="Blank Slate"
+      src="https://raw.githubusercontent.com/object-Object/HexMod/327ad0bfa8585800a0334d6a0fbd4c96460c414e/Common/src/main/resources/assets/hexcasting/textures/item/slate_blank.png"
+      loading="lazy"
+      class="item-texture multi-texture-active texture pixelated"
+    >
+        </div>
+        <div class="texture item-texture multi-textures cycle-textures">
+                <img
+      title="Amethyst Shard"
+      alt="Amethyst Shard"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/amethyst_shard.png"
+      loading="lazy"
+      class="item-texture multi-texture-active texture pixelated"
+    >
+        </div>
+        <div class="texture item-texture multi-textures cycle-textures">
+                <img
+      title="Blank Slate"
+      alt="Blank Slate"
+      src="https://raw.githubusercontent.com/object-Object/HexMod/327ad0bfa8585800a0334d6a0fbd4c96460c414e/Common/src/main/resources/assets/hexcasting/textures/item/slate_blank.png"
+      loading="lazy"
+      class="item-texture multi-texture-active texture pixelated"
+    >
+        </div>
+  </div>
+  <div class="crafting-table-result recipe-item-slot">
+    <img
+      title="Cognitive Inducer"
+      alt="Cognitive Inducer"
+      src="https://dashkal16.github.io/HexResearch/v/1.0.0/1.0.dev0/assets/hexresearch/textures/block/cognitive_inducer.png"
+      loading="lazy"
+      class="item-texture  texture "
+    >
+  </div>
+    </div>
+</div>    </div>
+  </details>
+      <p>Constructed of slate, amethyst, and a diamond to serve as an anchor point for the mind.</p>
+<br />
+    <p>The operation of the Cognitive Inducer is simple enough. Set it down near a villager, feed it media with a hopper or similar, and wait. A <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#items/lens">Scrying Lens</a> should help me monitor progress. Over time the inducer will take impressions of nearby villagers and over enough of these, will form a usable &#39;mind&#39; of its own. I have noticed that after some time of continuous induction, a villager will stop contributing. I have not yet found a way to utilize this mind, but with more research I&#39;m sure I will find a solution.</p>
+<br />
+    <p>I&#39;ve done it!</p><p>I have invented? discovered? a <a href="#patterns/great_spells/imbue_mind">great spell</a> that can transfer the mind from the inducer into a suitable construction in the same manner as <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#greatwork/brainsweeping">Flay Mind</a>.</p><p>Now I may cultivate minds for my own use and put them to work...</p><p>Should this bother me?</p>
+<br />
+</div>
+</section>
+<section id="greatwork">
+    <div class="spoilered">
+      <h2 class="category-title page-header">
+    <img
+      title="Music Disc"
+      alt="Music Disc"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/music_disc_11.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >The Great Work<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#greatwork"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p>I have seen... so much. I have... experienced... annihilation and deconstruction and reconstruction. I have seen the atoms of the world screaming as they were inverted and subverted and demoted to energy. I have seen I have seen I have s<span class="obfuscated">get stick bugged lmao</span></p>
+    </div>
+<div id="greatwork/enlightened_thought_sieve" class="entry">
+    <div class="spoilered">
+      <h3 class="entry-title page-header">
+    <img
+      title="Skeleton Skull"
+      alt="Skeleton Skull"
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA5UlEQVQ4y22TMQ4CMQwE/RYahERDgaBGUNBeS0XLD3j9oY00p8FKEfly9m7W66Rej+t6O+3XxPNhN1a+s56X49gnpob8Z7mPfGKxMdH3vYzFP4NDBjj7gjGJxBQnhgBCK0h0bQEwM6CQkIOEb1oueoYVQIpNYDBtBVeArQC5VsMBNni0gNM2iLY6OapMUhR0kpkypuOxby0Y4D5NiEeoGARInZ3O2LgbzN5TK982TjEROU/DqquDZxNwz/2Kb/egS+wE9gnwnweMDpMs2Yb2livFqOhvYDYJg1NbnGSz+gPqreBVCH6o7cFQ/fKDlAAAAABJRU5ErkJggg=="
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >On Thought Sifting<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#greatwork/enlightened_thought_sieve"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>I thought I was asking Nature for the spells. I thought I was asking an entity for answers! I immersed their mind in the great tangle. Filtering thoughts through synapse through idea through...</p><p>It is a wonder that they survived at all. As I felt the filtered media I swear I got a glimpse memory thought idea colour...<br />Stop. Here. Now. Breathe.</p>
+<br />
+    <p>Were they more?</p>
+<br />
+    </div>
+</div>
+</section>
+<section id="patterns">
+    <h2 class="category-title page-header">
+    <img
+      title="Bookshelf"
+      alt="Bookshelf"
+      src="https://hexdoc-dev.github.io/hexdoc-minecraft/v/1.19.2/1.0.dev1/assets/minecraft/textures/block/bookshelf.png"
+      loading="lazy"
+      class="item-texture  texture "
+    >Patterns<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p>A list of all the patterns I&#39;ve discovered, as well as what they do.</p>
+<div id="patterns/villager_actions" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="Emerald"
+      alt="Emerald"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/emerald.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Villagers<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/villager_actions"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>These pages describe actions that glean information about villagers.</p>
+<br />
+  <div id="patterns/villager_actions@hexresearch:villager_rank">
+<h4 class="pattern-title">Professional Prfn. (villager → number)<a
+    href="#patterns/villager_actions@hexresearch:villager_rank"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qadaadaeawa"
+        data-start="west"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: qadaadaeawa</canvas>
+  </details>
+      <p>Accepts a Villager <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#casting/101">entity</a> and returns their profession rank.</p>
+  </div>
+<br />
+  <div id="patterns/villager_actions@hexresearch:villager_popularity">
+<h4 class="pattern-title">Suggestibility Prfn. (villager → number)<a
+    href="#patterns/villager_actions@hexresearch:villager_popularity"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qadaadadeee"
+        data-start="west"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: qadaadadeee</canvas>
+  </details>
+      <p>Accepts a Villager <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#casting/101">entity</a> and returns a number indicating how much the caster may influence them (the caster&#39;s popularity).</p>
+  </div>
+<br />
+</div>
+</section>
+<section id="patterns/spells">
+    <h2 class="category-title page-header">
+    <img
+      title="Enchanted Book"
+      alt="Enchanted Book"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/enchanted_book.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Spells<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/spells"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p>Patterns and actions that perform a magical effect on the world.</p>
+<div id="patterns/spells/thought_sieve" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="Hopper"
+      alt="Hopper"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/items/hopper.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Thought Sieve<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/spells/thought_sieve"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>These great spells elude me so. There must be a better way to discover these than diving into old ruins to find what those before knew. If they discovered these, then so can I. To that end, I have found a way to ask Nature directly for these answers, but the answer comes as a torrent of what I can only perceive as garbage. Maybe I could filter the result somehow?</p>
+<br />
+    <p>Villagers may have just enough mind to them. I wonder if I could use them as a filter or &#34;sieve&#34; to reduce the the torrent to something comprehensible. The villager should have have mastery of their profession so as to have the proper discipline. They would also need to be suggestible, so as to accept the flow of media. Gaining popularity with them should accomplish this. I fear for them if they resist the process. Filtering that much information through their mind could &#34;snag&#34;.</p>
+<br />
+  <div id="patterns/spells/thought_sieve@hexresearch:thought_sieve">
+<h4 class="pattern-title">Thought Sieve (villager, scroll →)<a
+    href="#patterns/spells/thought_sieve@hexresearch:thought_sieve"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qadaadadqaqdadqaq"
+        data-start="west"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: qadaadadqaqdadqaq</canvas>
+  </details>
+      <p>Requests the proper way to invoke a great spell and filters the response through the mind of the villager. The scroll must hold a pattern that looks like a <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#patterns/great_spells">great spell</a> but the stroke order is irrelevant.</p>
+  </div>
+<br />
+    <p>If the spell is successful, it will rewrite the scroll to match the great spell. The greater the villager&#39;s <a href="#patterns/villager_actions@hexresearch:villager_rank">mastery</a> over their profession, the more likely it is that their mind is up to the task. However, if the villager is not <a href="#patterns/villager_actions@hexresearch:villager_popularity">suggestible</a> enough, they may lose part of themselves. In extreme cases, they may lose their life entirely... Am I really going to do this?</p>
+<br />
+    <p>Thought sifting is mentally fatiguing for the villager. I must be careful to avoid using the same villager too often, or I may cause them additional harm. It doesn&#39;t take long for them to recover, however. Half a minute should be enough.</p>
+<br />
+</div>
+</section>
+<section id="patterns/great_spells">
+    <h2 class="category-title page-header">
+    <img
+      title="Conduit Power"
+      alt="Conduit Power"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.19.1/mob_effect/conduit_power.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Great Spells<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/great_spells"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p>The spells catalogued here are purported to be of legendary difficulty and power. They seem to have been recorded only sparsely (for good reason, the texts claim). It&#39;s probably just the hogwash of extinct traditionalists, though-- a pattern&#39;s a pattern. What could possibly go wrong?</p>
+<div id="patterns/great_spells/imbue_mind" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="Cognitive Inducer"
+      alt="Cognitive Inducer"
+      src="https://dashkal16.github.io/HexResearch/v/1.0.0/1.0.dev0/assets/hexresearch/textures/block/cognitive_inducer.png"
+      loading="lazy"
+      class="item-texture  texture "
+    >Imbue Mind<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/great_spells/imbue_mind"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+  <div id="patterns/great_spells/imbue_mind@hexresearch:imbue_mind">
+<h4 class="pattern-title">Imbue Mind (vector, vector →)<a
+    href="#patterns/great_spells/imbue_mind@hexresearch:imbue_mind"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="wqwqwqwqwqwaewaqeqaqeedqdd"
+        data-start="north_east"
+        data-per-world="True"
+      >Your browser does not support visualizing patterns. Pattern code: wqwqwqwqwqwaewaqeqaqeedqdd</canvas>
+  </details>
+      <p>There&#39;s something here but I can&#39;t quite understand what it does...</p>
+  </div>
+<br />
+    <p>I&#39;ve grasped the meaning! This spell takes the location of a Cognitive Inducer and a target construction, then imbues the mind into the construction. The minds and constructions are exactly the same as for <a href="https://hexcasting.hexxy.media/v/0.10.3/1.0.dev22/en_us#greatwork/brainsweeping">Flay Mind</a>.</p>
+<br />
+</div>
+</section>
+  </main>
+</div>
+      <footer class="footer">
+        <div class="container">
+          <p class="text-muted">
+            Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.<br />
+            Minecraft content and materials are the intellectual property of their respective owners.<br />
+            Made with ❤️ using <a href="https://pypi.org/project/hexdoc/" target="_blank">hexdoc</a>.
+          </p>
+        </div>
+      </footer>
+  </body>
+</html>
